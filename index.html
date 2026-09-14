@@ -7,7 +7,7 @@
 <meta name="description" content="Release notes for a career: engineer to product. Eight shipped projects and the thinking behind them." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&family=Archivo:wght@600;700;800&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,800&display=swap" rel="stylesheet">
 <style>
 
   :root {
@@ -599,6 +599,44 @@
   .study .kicker { font-size: 0.8rem; color: var(--muted); margin: 0 0 10px; font-family: var(--font-sans); }
 
 
+
+  /* ---------- home: big-type ---------- */
+  .home2 { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column;
+    font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--ink); overflow: hidden; }
+  .home2 a { color: var(--ink); text-decoration: none; }
+  .home2 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .home2 .h2top { display: flex; align-items: center; justify-content: space-between;
+    padding: 14px clamp(14px, 1.2vw, 24px) 0; font-size: clamp(14px, 1.05vw, 17px); font-weight: 600; letter-spacing: -0.01em; }
+  .home2 .h2mark { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--ink);
+    display: grid; place-items: center; font-size: 13px; font-weight: 800; letter-spacing: -0.04em; }
+  .home2 .h2mark:hover { text-decoration: none; }
+  .home2 .h2top nav { display: flex; gap: clamp(24px, 4vw, 80px); align-items: center; }
+  .home2 .h2top button { font: inherit; color: var(--ink); background: none; border: none; padding: 0; cursor: pointer; }
+  .home2 .h2top button:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .home2 main { flex: 1; display: grid; place-items: center; align-content: center; gap: clamp(10px, 2vh, 24px);
+    padding: 0 clamp(12px, 3vw, 60px); }
+  .home2 h1 { margin: 0; display: flex; align-items: baseline; justify-content: center; white-space: nowrap;
+    font-family: 'Bricolage Grotesque', 'Archivo', sans-serif; font-weight: 800;
+    font-size: clamp(56px, 12.4vw, 260px); line-height: 1; letter-spacing: -0.045em;
+    animation: h2up 1.1s cubic-bezier(.2,.7,.2,1) .1s both; }
+  .home2 .h2photo { display: block; flex: none; align-self: baseline; height: .56em; width: .82em;
+    margin: 0 .04em -.005em .07em; overflow: hidden; background: #ddd; }
+  .home2 .h2photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; filter: grayscale(1); }
+  .home2 .h2tag { margin: 0; font-size: clamp(15px, 1.3vw, 22px); font-weight: 600; letter-spacing: -0.01em; animation: h2up 1s ease .4s both; }
+  .home2 footer { display: grid; grid-template-columns: 1fr minmax(0, 2fr) 1fr; align-items: end; gap: 24px;
+    padding: 0 clamp(14px, 1.2vw, 24px) 14px; font-size: clamp(14px, 1.05vw, 17px); font-weight: 600; line-height: 1.2;
+    letter-spacing: -0.01em; animation: h2up 1s ease .5s both; }
+  .home2 footer .h2cur { display: grid; gap: 2px; }
+  .home2 footer .h2cur span:first-child { color: var(--muted); }
+  .home2 footer p { margin: 0; max-width: 440px; justify-self: center; text-wrap: pretty; }
+  .home2 footer .h2links { display: flex; gap: clamp(14px, 1.5vw, 24px); justify-self: end; }
+  @keyframes h2up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 760px) {
+    .home2 h1 { white-space: normal; flex-wrap: wrap; font-size: clamp(56px, 19vw, 120px); }
+    .home2 footer { grid-template-columns: 1fr; gap: 16px; }
+    .home2 footer p, .home2 footer .h2links { justify-self: start; }
+  }
+
   section[data-view] { display: none; }
   section[data-view].is-active { display: block; }
   .glow { display: none; }
@@ -609,58 +647,29 @@
 <body data-view="home">
 
 <section data-view="home" id="view-home" class="is-active">
-<div class="home">
-  <header class="top">
-    <span class="mark">SK</span>
+<div class="home2">
+  <header class="h2top">
+    <a class="h2mark" href="#/" aria-label="Home">SK</a>
     <nav>
       <a href="#/work">Work</a>
       <a href="#/about">About</a>
+      <a href="mailto:you@example.com">Contact</a>
       <button class="modeBtn" type="button">Lights</button>
     </nav>
   </header>
-
   <main>
-    <p class="kicker">RELEASE NOTES · 2026</p>
-    <h1>Satya Krithik <span class="version">v2.0</span></h1>
-    <div class="tag">
-      <p>Now in product.</p>
-      <span class="pill">shipping</span>
-    </div>
-
-    <section class="log" aria-label="What changed">
-      <h2>What changed</h2>
-      <ul>
-        <!-- EDIT: make these three lines true. This is your whole pitch. -->
-        <li class="add"><b>+</b><span>added — product management: discovery, scoping, and the discipline of saying no</span></li>
-        <li class="chg"><b>~</b><span>carried over — eight projects built end to end, now written up as case studies</span></li>
-        <li class="brk"><b>!</b><span>breaking change — [your previous role] &rarr; product. Migration notes in the case studies.</span></li>
-      </ul>
-    </section>
-
-    <section class="routes" aria-label="Explore">
-      <h2>Explore</h2>
-      <a href="#/work"><b>The work</b><span>changelog · 8 entries</span></a>
-      <a href="#/about"><b>The maintainer</b><span>about</span></a>
-      <div class="soon"><b>The writing</b><span>v0.1 · in draft</span></div>
-    </section>
-
-    <section class="history" aria-label="Version history">
-      <h2>Version history</h2>
-      <!-- EDIT: your actual dates and previous roles. -->
-      <div><em>v2.0</em> — 2026 · product management</div>
-      <div><em>v1.x</em> — 20XX–2025 · [your previous role]</div>
-      <div><em>v0.x</em> — the years of learning how things get made</div>
-    </section>
+    <h1><span>Satya</span><a class="h2photo" href="#/about" title="About"><img src="images/satya-bw.png" alt="Satya Krithik"></a><span>Krithik</span></h1>
+    <p class="h2tag">Building what matters</p>
   </main>
-
   <footer>
-    <a href="#">Resume</a>
-    <a href="mailto:you@example.com">Email</a>
-    <a href="#">LinkedIn</a>
+    <div class="h2cur"><span>Currently</span><span>Now in product</span></div>
+    <p>Engineer moving into product management. Eight things shipped, scoped or killed, and what each one taught me about discovery, scoping and saying no.</p>
+    <div class="h2links">
+      <a href="#">Resume</a>
+      <a href="https://www.linkedin.com/in/satya-krithik-p-s/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </footer>
 </div>
-
-
 </section>
 
 <div class="glow" aria-hidden="true"></div>
@@ -678,7 +687,7 @@
       <a href="#/">Home</a>
       <a href="#">Resume</a>
       <a href="mailto:you@example.com">Email</a>
-      <a href="#">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/satya-krithik-p-s/" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
   </header>
 
@@ -715,7 +724,7 @@
   <div class="contact">
     <a href="#">Resume</a>
     <a href="mailto:you@example.com">Email</a>
-    <a href="#">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/satya-krithik-p-s/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </article>
 
