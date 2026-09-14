@@ -416,13 +416,15 @@
   /* ---------- the wall can't reflow, so below 760px it becomes a column ---------- */
   @media (max-width: 760px) {
     .page { padding: 40px 20px 90px; }
-    .wall { aspect-ratio: auto; display: flex; flex-direction: column; gap: 38px; }
+    .wall { aspect-ratio: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 34px 18px; align-items: end; padding-top: 8px; }
     .piece, .label, .cord, .bulb, .bulb__hint { position: static; }
     .wall  { height: auto !important; }
     .label { width: auto; }
-    .piece { width: 100% !important; left: auto !important; top: auto !important; transform: none !important; transition: none; }
-    .piece .art { width: min(100%, 360px); margin: 0 auto; }
-    .label { position: static; margin: 10px auto 0; width: min(100%, 360px); text-align: left; }
+    .piece { width: 100% !important; left: auto !important; top: auto !important; transform: none !important; transition: none; min-width: 0; }
+    .piece .art { width: 100%; margin: 0; border-width: 4px; outline-offset: -5px; }
+    .label { position: static; margin: 8px 0 0; width: 100%; text-align: left; font-size: 0.7rem; }
+    .cord, .bulb, .bulb__hint { display: none; }
+    .masthead__role { font-size: 0.85rem; }
     .filters { gap: 12px 18px; }
     .masthead { padding-bottom: 16px; }
     .masthead__name { font-size: 1.2rem; }
@@ -688,9 +690,12 @@
     /* home: name stacks Satya / photo / Krithik */
     .home2 { min-height: 100svh; }
     .home2 main { padding: 24px 18px; gap: 18px; }
-    .home2 h1 { white-space: normal; flex-direction: column; align-items: flex-start; gap: 8px;
-      font-size: clamp(64px, 22vw, 110px); line-height: .92; width: 100%; }
-    .home2 .h2photo { align-self: flex-start; height: .62em; width: .9em; margin: .04em 0 0 .02em; }
+    .home2 h1 { white-space: normal; flex-direction: column; align-items: flex-start; gap: 10px;
+      font-size: clamp(72px, 24vw, 120px); line-height: .9; width: 100%; }
+    .home2 .h2photo { align-self: flex-start; height: .9em; width: 1.3em; margin: .06em 0 .02em .02em; }
+    .home2 main { padding: 12px 18px 24px; }
+    .home2 .h2tag { margin-top: 4px; }
+    .home2 footer .h2cur { display: flex; gap: 8px; }
     .home2 .h2tag { font-size: 17px; justify-self: start; width: 100%; }
     .home2 footer { grid-template-columns: 1fr; gap: 18px; padding: 0 18px 22px; font-size: 15px; }
     .home2 footer p, .home2 footer .h2links { justify-self: start; }
@@ -731,7 +736,7 @@
     </nav>
   </header>
   <main>
-    <h1><span>Satya</span><a class="h2photo" href="#/about" title="About"><img src="images/satya-bw.png" alt="Satya Krithik" class="is-on"><img src="images/satya-bw-2.png" alt=""></a><span>Krithik</span></h1>
+    <h1><span>Satya</span><a class="h2photo" href="#/about" title="About"><img src="satya-bw.png" alt="Satya Krithik" class="is-on"><img src="satya%202%20bw.jpeg" alt=""></a><span>Krithik</span></h1>
     <p class="h2tag">Building what matters</p>
   </main>
   <footer>
