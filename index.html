@@ -670,7 +670,7 @@
   .home2 .h2photo { display: block; flex: none; align-self: baseline; height: .56em; width: .82em;
     margin: 0 .04em -.005em .07em; overflow: hidden; background: #ddd; }
   .home2 .h2photo { position: relative; }
-  .home2 .h2photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; filter: grayscale(1); opacity: 0; transition: opacity .6s ease; }
+  .home2 .h2photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; filter: grayscale(1); opacity: 0; transition: opacity .28s ease-in-out; }
   .home2 .h2photo img.is-on { opacity: 1; }
   .home2 .h2tag { margin: 0; font-size: clamp(15px, 1.3vw, 22px); font-weight: 600; letter-spacing: -0.01em; animation: h2up 1s ease .4s both; }
   .home2 footer { display: grid; grid-template-columns: 1fr minmax(0, 2fr) 1fr; align-items: end; gap: 24px;
@@ -736,7 +736,7 @@
     </nav>
   </header>
   <main>
-    <h1><span>Satya</span><a class="h2photo" href="#/about" title="About"><img src="satya-bw.png" alt="Satya Krithik" class="is-on"><img src="satya%202%20bw.jpeg" alt=""></a><span>Krithik</span></h1>
+    <h1><span>Satya</span><a class="h2photo" href="#/about" title="About"><img src="satya-bw.png" alt="Satya Krithik" class="is-on"><img src="dark-knight.jpg" alt="The Dark Knight"><img src="virat-kohli.jpg" alt="Virat Kohli"><img src="12-angry-men.jpg" alt="12 Angry Men"><img src="ronaldo.jpg" alt="Cristiano Ronaldo"><img src="rcb.jpg" alt="Royal Challengers Bengaluru"><img src="satya%202%20bw.jpeg" alt="Satya Krithik"></a><span>Krithik</span></h1>
     <p class="h2tag">Building what matters</p>
   </main>
   <footer>
@@ -1474,7 +1474,7 @@ addEventListener('hashchange', route);
     imgs[i].classList.remove('is-on');
     i = (i + 1) % imgs.length;
     imgs[i].classList.add('is-on');
-  }, 2600);
+  }, 1300);
 })();
 route();
 
