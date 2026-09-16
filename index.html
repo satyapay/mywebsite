@@ -863,21 +863,46 @@
 // EDIT ME: every project on the site lives in this one array.
 const projects = [
   {
-    "id": "the-scream",
-    "slug": "the-scream",
-    "title": "The Scream",
-    "cat": "AI",
-    "meta": "Munch \u00b7 1893",
-    "plaque": "Oil, tempera and pastel on cardboard",
-    "sub": "Edvard Munch",
+    "id": "parivahan",
+    "slug": "parivahan",
+    "title": "Parivahan Reimagined",
+    "cat": "Product sense",
+    "meta": "GovTech · 2026",
+    "plaque": "Faceless Transport & Citizen Mobility Platform",
+    "sub": "National Transport Services Overhaul",
     "excerpt": [
-      "Replace this with the problem you were solving and who had it.",
-      "Then what you decided, what you traded away, and how you knew it worked."
+      "Eliminated mandatory RTO visits for 120M citizens by replacing a 6-month bureaucratic maze with a 3-day bilateral transfer room.",
+      "Engineered WebRTC Remote Video KYC, 1-click Bank NOC via Account Aggregator, and Virtual Traffic Court with photographic radar evidence."
     ],
-    "ar": 0.81,
-    "scale": 1.12,
-    "bg": "radial-gradient(circle at 50% 12%, rgba(255,255,255,0.15) 0%, transparent 30%), linear-gradient(180deg, #e85d2c 0%, #f2a03d 25%, #7a3b23 55%, #16233a 100%)",
-    "prose": "<h2>The problem</h2><p>Replace this with the situation: who was hurting, how you knew, and why it mattered to the business.</p><h2>What I did</h2><p>The options you considered, the one you chose, and the tradeoff you accepted to choose it.</p><h2>The outcome</h2><p>What happened. A number if you have one, an honest &quot;we never found out&quot; if you don&#x27;t.</p><h2>What I&#x27;d do differently</h2><p>One paragraph. This section is where hiring managers decide you can think.</p>"
+    "ar": 1.45,
+    "scale": 1.15,
+    "bg": "radial-gradient(circle at 80% 20%, #ff9933 0%, rgba(255,153,51,0.2) 25%, transparent 50%), radial-gradient(circle at 20% 80%, #138808 0%, rgba(19,136,8,0.2) 25%, transparent 50%), linear-gradient(145deg, #0b1e36 0%, #102a45 45%, #183b5c 100%)",
+    "role": "Product Architect & Full-Stack Builder",
+    "timeline": "3 weeks · 2026",
+    "team": "Solo (Product, System Design & Full-Stack Code)",
+    "links": {
+      "live": "https://parivahan-reimagined.vercel.app",
+      "github": "https://github.com/satyapay/parivahan-reimagined"
+    },
+    "stats": [
+      {
+        "value": "3 Days",
+        "label": "transfer cycle (down from 6 mo)"
+      },
+      {
+        "value": "0 Min",
+        "label": "physical RTO queue time"
+      },
+      {
+        "value": "100%",
+        "label": "faceless digital adoption"
+      },
+      {
+        "value": "55/55",
+        "label": "automated audit tests passing"
+      }
+    ],
+    "prose": "<h2>1. Context &amp; The Catalyst</h2><p>Over 120 million citizens interact with regional transport offices (RTOs) across India annually. When I bought a second-hand motorcycle from a friend residing in another state, the ownership transfer took over six months. Co-signing physical Form 29/30, procuring bank loan clearance letters, and coordinating interstate paperwork proved virtually impossible without hiring physical touts or visiting RTO counters. I set out to rebuild Parivahan as a modern, faceless, bilateral experience.</p><h2>2. The User Insight</h2><p>Legacy government portals treat transport administration as a one-way, siloed form submission. In reality, vehicle ownership transfer is a <b>bilateral coordination problem</b> between two parties who do not trust each other with physical documents before payment. By shifting from static PDF forms to a <b>shared, synchronized state machine</b> with automated clearances, both parties gain real-time visibility and legal confidence.</p><h2>3. What I Shipped (Core Pillars)</h2><ul><li><b>Synchronized P2P Transfer Room:</b> Bilateral state machine replacing manual RTO visits. Includes pre-flight validation of insurance, emissions, and active challans.</li><li><b>1-Click Account Aggregator Bank NOC:</b> Instant API ping to lending institutions (e.g. HDFC Bank) to confirm auto-loan closure and programmatically remove hypothecation liens in VAHAN within seconds.</li><li><b>WebRTC Remote Video KYC:</b> 4-step guided liveness detection and verbal OTP consent (<code>8 2 4 9 1</code>) establishing statutory non-repudiation under IT Act Section 4.</li><li><b>Virtual Traffic Court with Radar Evidence:</b> Contextual speed radar snapshots (<code>104 km/h in 80 km/h zone</code>) with 1-click statutory dispute filings and automated payment deadline freezes.</li><li><b>Unified Citizen Lifecycle:</b> Aadhaar e-KYC Learner&#39;s License &rarr; Automated Driving Test Track (ADTT) sensor slot booking &rarr; India Post Speed Post tracker &rarr; 4-vehicle fleet management.</li><li><b>6-Step International Driving Permit (IDP):</b> e-Sanjeevani tele-consultation (Form 1-A medical fitness) with blood serology diagnostic report verification and draft saving.</li></ul><h2>4. Strategic Product Trade-offs</h2><p><b>Remote Video KYC vs. Basic SMS OTP:</b> While SMS OTP has lower friction, high-value asset transfers require non-repudiation to prevent identity fraud. Implementing guided video liveness with verbal code recitation gave legal certainty without physical counter visits.</p><p><b>Automated Deadline Freeze on Challan Dispute:</b> Requiring citizens to pay fines upfront before contesting destroys trust. Freezing the statutory deadline during magistrate review ensures procedural fairness.</p><h2>5. System Architecture</h2><p>Built on a 3-tier architecture with an Express.js REST API gateway, cloud PostgreSQL on Supabase, and real-time state management, designed with dual-mode fallback so reviewers experience instant sub-100ms response times.</p><h2>6. What I&#39;d Build Next (V2 Roadmap)</h2><ul><li><b>DigiYatra Biometric Gate:</b> Walk-through facial biometric verification at automated driving test tracks (ADTT).</li><li><b>Inter-State Road Tax Clearing House:</b> Automated pro-rata road tax refund and transfer when relocating vehicles across state lines.</li><li><b>FASTag Automated Toll Dispute API:</b> Instant refund triggers for duplicate toll plaza deductions.</li></ul>"
   },
   {
     "id": "starry-night",
