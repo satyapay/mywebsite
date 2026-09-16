@@ -905,38 +905,46 @@ const projects = [
     "prose": "<h2>1. Context &amp; The Catalyst</h2><p>Over 120 million citizens interact with regional transport offices (RTOs) across India annually. When I bought a second-hand motorcycle from a friend residing in another state, the ownership transfer took over six months. Co-signing physical Form 29/30, procuring bank loan clearance letters, and coordinating interstate paperwork proved virtually impossible without hiring physical touts or visiting RTO counters. I set out to rebuild Parivahan as a modern, faceless, bilateral experience.</p><h2>2. The User Insight</h2><p>Legacy government portals treat transport administration as a one-way, siloed form submission. In reality, vehicle ownership transfer is a <b>bilateral coordination problem</b> between two parties who do not trust each other with physical documents before payment. By shifting from static PDF forms to a <b>shared, synchronized state machine</b> with automated clearances, both parties gain real-time visibility and legal confidence.</p><h2>3. What I Shipped (Core Pillars)</h2><ul><li><b>Synchronized P2P Transfer Room:</b> Bilateral state machine replacing manual RTO visits. Includes pre-flight validation of insurance, emissions, and active challans.</li><li><b>1-Click Account Aggregator Bank NOC:</b> Instant API ping to lending institutions (e.g. HDFC Bank) to confirm auto-loan closure and programmatically remove hypothecation liens in VAHAN within seconds.</li><li><b>WebRTC Remote Video KYC:</b> 4-step guided liveness detection and verbal OTP consent (<code>8 2 4 9 1</code>) establishing statutory non-repudiation under IT Act Section 4.</li><li><b>Virtual Traffic Court with Radar Evidence:</b> Contextual speed radar snapshots (<code>104 km/h in 80 km/h zone</code>) with 1-click statutory dispute filings and automated payment deadline freezes.</li><li><b>Unified Citizen Lifecycle:</b> Aadhaar e-KYC Learner&#39;s License &rarr; Automated Driving Test Track (ADTT) sensor slot booking &rarr; India Post Speed Post tracker &rarr; 4-vehicle fleet management.</li><li><b>6-Step International Driving Permit (IDP):</b> e-Sanjeevani tele-consultation (Form 1-A medical fitness) with blood serology diagnostic report verification and draft saving.</li></ul><h2>4. Strategic Product Trade-offs</h2><p><b>Remote Video KYC vs. Basic SMS OTP:</b> While SMS OTP has lower friction, high-value asset transfers require non-repudiation to prevent identity fraud. Implementing guided video liveness with verbal code recitation gave legal certainty without physical counter visits.</p><p><b>Automated Deadline Freeze on Challan Dispute:</b> Requiring citizens to pay fines upfront before contesting destroys trust. Freezing the statutory deadline during magistrate review ensures procedural fairness.</p><h2>5. System Architecture</h2><p>Built on a 3-tier architecture with an Express.js REST API gateway, cloud PostgreSQL on Supabase, and real-time state management, designed with dual-mode fallback so reviewers experience instant sub-100ms response times.</p><h2>6. What I&#39;d Build Next (V2 Roadmap)</h2><ul><li><b>DigiYatra Biometric Gate:</b> Walk-through facial biometric verification at automated driving test tracks (ADTT).</li><li><b>Inter-State Road Tax Clearing House:</b> Automated pro-rata road tax refund and transfer when relocating vehicles across state lines.</li><li><b>FASTag Automated Toll Dispute API:</b> Instant refund triggers for duplicate toll plaza deductions.</li></ul>"
   },
   {
-    "id": "starry-night",
-    "slug": "starry-night",
-    "title": "The Starry Night",
-    "cat": "Product sense",
-    "meta": "van Gogh \u00b7 1889",
-    "plaque": "Oil on canvas",
-    "sub": "Vincent van Gogh",
+    "id": "rentos",
+    "slug": "rentos",
+    "title": "RentOS PropTech Platform",
+    "cat": "System design",
+    "meta": "PropTech · FinTech · 2026",
+    "plaque": "Next-Gen Rental Intelligence & Lease OS",
+    "sub": "Dual-Sided Property Management & Rent Optimization",
     "excerpt": [
-      "Replace this with the problem you were solving and who had it.",
-      "Then what you decided, what you traded away, and how you knew it worked."
+      "Replaced chaotic WhatsApp rent chasers, Excel ledgers, and fragmented PDF leases with an automated, dual-sided property management platform.",
+      "Engineered 1-click Demo Persona Switcher for reviewers, dynamic lease agreement generator with AI risk analysis, automated rent collections, and audit-ready P&L telemetry."
     ],
-    "ar": 1.25,
-    "scale": 1.0,
-    "bg": "radial-gradient(circle at 78% 18%, #f6e27a 0%, #f6e27a 5%, transparent 11%), radial-gradient(circle at 32% 14%, #f2c14e 0%, #f2c14e 4%, transparent 9%), linear-gradient(155deg, #16213e 0%, #1f4068 45%, #274b7a 70%, #16213e 100%)",
-    "role": "Product \u2014 solo build",
-    "timeline": "6 weeks, 2026",
-    "team": "Solo",
+    "ar": 1.35,
+    "scale": 1.1,
+    "bg": "radial-gradient(circle at 80% 20%, #00f2fe 0%, rgba(0,242,254,0.2) 25%, transparent 50%), radial-gradient(circle at 20% 80%, #9d4edd 0%, rgba(157,78,221,0.25) 25%, transparent 50%), linear-gradient(145deg, #090d16 0%, #0f172a 50%, #1e1b4b 100%)",
+    "role": "Product Lead & Full-Stack Architect",
+    "timeline": "2 weeks · 2026",
+    "team": "Solo (Product Strategy, UX Architecture & Full-Stack TypeScript)",
     "links": {
-      "live": "https://your-project-url.com",
-      "github": "https://github.com/you/your-repo"
+      "live": "https://rentosprop.vercel.app",
+      "github": "https://github.com/satyapay/rentosprop"
     },
     "stats": [
       {
-        "value": "38%",
-        "label": "example outcome metric"
+        "value": "1-Click",
+        "label": "demo persona switcher for reviewers"
       },
       {
-        "value": "6 wks",
-        "label": "idea to shipped"
+        "value": "₹1.5L/mo",
+        "label": "automated cash flow tracking"
+      },
+      {
+        "value": "0 Mismatch",
+        "label": "reconciled rent & deposit ledger"
+      },
+      {
+        "value": "43/43",
+        "label": "automated unit & logic tests passing"
       }
     ],
-    "prose": "<h2>The problem</h2><p>Replace this with the situation: who was hurting, how you knew, and why it mattered to the business.</p><h2>What I did</h2><p>The options you considered, the one you chose, and the tradeoff you accepted to choose it.</p><h2>The outcome</h2><p>What happened. A number if you have one, an honest &quot;we never found out&quot; if you don&#x27;t.</p><h2>What I&#x27;d do differently</h2><p>One paragraph. This section is where hiring managers decide you can think.</p>"
+    "prose": "<h2>1. Context &amp; The Problem Space</h2><p>India&#39;s urban residential and commercial rental market exceeds \$30 billion annually, yet over 90% of independent property owners manage their portfolios using fragmented WhatsApp chats, scattered bank SMS notifications, and physical paper agreements. Landlords face constant payment follow-up friction and delayed maintenance coordination. Conversely, tenants lack visibility into security deposit ledgers, rent receipts, and formal maintenance audit trails. I built <b>RentOS</b> to unify both sides of the rental equation into a modern, real-time operating system.</p><h2>2. The Dual-Persona Insight</h2><p>Most PropTech tools fail because they are built either solely as back-office landlord accounting software (ignoring tenant friction) or as tenant-only rent payment wrappers (lacking asset management depth). RentOS is architected as a <b>dual-sided, synchronized platform</b> where every landlord action (e.g. issuing a lease, logging an expense, recording rent) reflects instantaneously in the tenant&#39;s dedicated portal, and vice versa.</p><h2>3. What I Shipped (Core Platform Pillars)</h2><ul><li><b>1-Click Demo Persona Switcher:</b> A topbar reviewer switch allowing hiring managers and portfolio reviewers to toggle between Landlord View (5 properties, ₹1.5L/mo cash flow, P&amp;L analytics, tenant directory) and Tenant View (Rahul Sharma · Unit 201, rent payment modal, maintenance tickets, document vault) in 2 seconds with zero registration friction.</li><li><b>Dynamic Lease Agreement Generator &amp; AI Risk Scanner:</b> Programmatically produces enforceable residential/commercial agreements with customized lock-in periods, escalation clauses, and security deposit terms. Integrated AI risk analysis highlights non-standard clauses, liability pitfalls, and stamp duty requirements.</li><li><b>Automated Rent Ledger &amp; Reconciliation:</b> Real-time status tracker categorized across Paid, Due, and Partial collections with automated calculation of pending dues, payment method attribution (UPI, Bank Transfer, Cash), and downloadable tax-compliant rent receipts.</li><li><b>Tenant Maintenance Ticketing &amp; Resolution Pipeline:</b> Interactive issue reporting with priority classification (Emergency, Normal, Cosmetic), photo attachment support, and status tracking (Reported &rarr; In Progress &rarr; Resolved).</li><li><b>Property P&amp;L &amp; Expense Telemetry:</b> Granular classification of repairs, property taxes, common area utilities, and insurance with automatic reimbursement toggling and net rental yield analytics.</li></ul><h2>4. Strategic Product Decisions &amp; Trade-offs</h2><p><b>Persistent Reviewer Mode vs. Enforced Authentication:</b> Hiring managers spend under 60 seconds reviewing a portfolio project. Forcing reviewers through email verification leads to a 90%+ drop-off. By building local storage-backed persona simulation into the authentication layer, reviewers experience full product fidelity instantly.</p><p><b>Client-Side State Synchronization with Cloud Supabase:</b> Provided instant sub-50ms optimistic UI updates across tenant payments and property management with background cloud persistence for zero latency lag.</p><h2>5. What I&#39;d Build Next (V2 Roadmap)</h2><ul><li><b>Account Aggregator Rent Verification:</b> Automated recurring UPI e-mandates with instant webhook payment reconciliation.</li><li><b>Digital Biometric Lease e-Sign (DigiLocker / NeSL):</b> Direct Aadhaar eSign integration for legally binding paperless registration.</li><li><b>Predictive Maintenance Cost Modeling:</b> Machine learning estimation of appliance lifecycles and seasonal maintenance provisions based on property age.</li></ul>"
   },
   {
     "id": "great-wave",
