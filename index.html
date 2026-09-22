@@ -947,21 +947,46 @@ const projects = [
     "prose": "<h2>1. Context &amp; The Problem Space</h2><p>India&#39;s urban residential and commercial rental market exceeds \$30 billion annually, yet over 90% of independent property owners manage their portfolios using fragmented WhatsApp chats, scattered bank SMS notifications, and physical paper agreements. Landlords face constant payment follow-up friction and delayed maintenance coordination. Conversely, tenants lack visibility into security deposit ledgers, rent receipts, and formal maintenance audit trails. I built <b>RentOS</b> to unify both sides of the rental equation into a modern, real-time operating system.</p><h2>2. The Dual-Persona Insight</h2><p>Most PropTech tools fail because they are built either solely as back-office landlord accounting software (ignoring tenant friction) or as tenant-only rent payment wrappers (lacking asset management depth). RentOS is architected as a <b>dual-sided, synchronized platform</b> where every landlord action (e.g. issuing a lease, logging an expense, recording rent) reflects instantaneously in the tenant&#39;s dedicated portal, and vice versa.</p><h2>3. What I Shipped (Core Platform Pillars)</h2><ul><li><b>1-Click Demo Persona Switcher:</b> A topbar reviewer switch allowing hiring managers and portfolio reviewers to toggle between Landlord View (5 properties, ₹1.5L/mo cash flow, P&amp;L analytics, tenant directory) and Tenant View (Rahul Sharma · Unit 201, rent payment modal, maintenance tickets, document vault) in 2 seconds with zero registration friction.</li><li><b>Dynamic Lease Agreement Generator &amp; AI Risk Scanner:</b> Programmatically produces enforceable residential/commercial agreements with customized lock-in periods, escalation clauses, and security deposit terms. Integrated AI risk analysis highlights non-standard clauses, liability pitfalls, and stamp duty requirements.</li><li><b>Automated Rent Ledger &amp; Reconciliation:</b> Real-time status tracker categorized across Paid, Due, and Partial collections with automated calculation of pending dues, payment method attribution (UPI, Bank Transfer, Cash), and downloadable tax-compliant rent receipts.</li><li><b>Tenant Maintenance Ticketing &amp; Resolution Pipeline:</b> Interactive issue reporting with priority classification (Emergency, Normal, Cosmetic), photo attachment support, and status tracking (Reported &rarr; In Progress &rarr; Resolved).</li><li><b>Property P&amp;L &amp; Expense Telemetry:</b> Granular classification of repairs, property taxes, common area utilities, and insurance with automatic reimbursement toggling and net rental yield analytics.</li></ul><h2>4. Strategic Product Decisions &amp; Trade-offs</h2><p><b>Persistent Reviewer Mode vs. Enforced Authentication:</b> Hiring managers spend under 60 seconds reviewing a portfolio project. Forcing reviewers through email verification leads to a 90%+ drop-off. By building local storage-backed persona simulation into the authentication layer, reviewers experience full product fidelity instantly.</p><p><b>Client-Side State Synchronization with Cloud Supabase:</b> Provided instant sub-50ms optimistic UI updates across tenant payments and property management with background cloud persistence for zero latency lag.</p><h2>5. What I&#39;d Build Next (V2 Roadmap)</h2><ul><li><b>Account Aggregator Rent Verification:</b> Automated recurring UPI e-mandates with instant webhook payment reconciliation.</li><li><b>Digital Biometric Lease e-Sign (DigiLocker / NeSL):</b> Direct Aadhaar eSign integration for legally binding paperless registration.</li><li><b>Predictive Maintenance Cost Modeling:</b> Machine learning estimation of appliance lifecycles and seasonal maintenance provisions based on property age.</li></ul>"
   },
   {
-    "id": "great-wave",
-    "slug": "great-wave",
-    "title": "The Great Wave",
+    "id": "cred",
+    "slug": "cred",
+    "title": "CRED — A Door for Everything",
     "cat": "Teardown",
-    "meta": "Hokusai \u00b7 c.1831",
-    "plaque": "Woodblock print",
-    "sub": "Katsushika Hokusai",
+    "meta": "Product Teardown · FinTech · Sep 2026",
+    "plaque": "Screen-by-Screen Information Architecture & Monetization Analysis",
+    "sub": "Deconstructing India's Most Exclusive FinTech Super-App",
     "excerpt": [
-      "Replace this with the problem you were solving and who had it.",
-      "Then what you decided, what you traded away, and how you knew it worked."
+      "CRED started as a high-trust credit card bill payment app with rewards. Today it spans lending, UPI, co-branded cards, commerce, and vehicle management.",
+      "A screen-by-screen breakdown of how 30+ entry points compete for home real estate, where users face cognitive overload, and 3 high-leverage architectural redesigns."
     ],
-    "ar": 1.47,
-    "scale": 0.94,
-    "bg": "radial-gradient(ellipse 60% 38% at 28% 72%, #eee6cf 0%, transparent 60%), radial-gradient(ellipse 85% 55% at 62% 28%, #3f6b8a 0%, #1d3557 55%, transparent 78%), linear-gradient(180deg, #cfe3ea 0%, #eef1e6 100%)",
-    "prose": "<h2>The problem</h2><p>Replace this with the situation: who was hurting, how you knew, and why it mattered to the business.</p><h2>What I did</h2><p>The options you considered, the one you chose, and the tradeoff you accepted to choose it.</p><h2>The outcome</h2><p>What happened. A number if you have one, an honest &quot;we never found out&quot; if you don&#x27;t.</p><h2>What I&#x27;d do differently</h2><p>One paragraph. This section is where hiring managers decide you can think.</p>"
+    "ar": 1.35,
+    "scale": 1.1,
+    "bg": "radial-gradient(circle at 75% 25%, #3ddc84 0%, rgba(61,220,132,0.22) 24%, transparent 50%), radial-gradient(circle at 25% 75%, #00f2fe 0%, rgba(0,242,254,0.18) 24%, transparent 50%), linear-gradient(145deg, #09090c 0%, #131317 45%, #1e1e24 100%)",
+    "role": "Product Lead & Growth Teardown",
+    "timeline": "Sep 2026",
+    "team": "Solo (2+ Years Weekly Usage Analysis & Architecture Framework)",
+    "links": {
+      "live": "cred-teardown.html",
+      "github": "https://github.com/satyapay/mywebsite"
+    },
+    "stats": [
+      {
+        "value": "6 Doors",
+        "label": "to reach credit score alone"
+      },
+      {
+        "value": "30+",
+        "label": "entry points on day one"
+      },
+      {
+        "value": "4 Nudges",
+        "label": "competing in a single scroll"
+      },
+      {
+        "value": "3 Fixes",
+        "label": "progressive disclosure IA framework"
+      }
+    ],
+    "prose": "<h2>1. Context &amp; The Business Engine</h2><p>Kunal Shah launched CRED in 2018 with an alluring hook: pay your credit card bill on time and earn rewards. The mandatory 750+ credit score filter created a high-trust, affluent user cohort—the exact demographics banks want to lend to and luxury brands want to acquire. To capture that value, CRED expanded aggressively into unsecured lending (CRED Cash), UPI payments, co-branded cards, curated commerce drops (Rewards), and vehicle compliance (Garage). The central challenge: <b>how does a product team keep layering new revenue engines without destroying the simplicity of the core utility?</b></p><h2>2. The User Profile &amp; Usage Patterns</h2><p>The typical user is a 25–40 urban professional holding 2+ credit cards, making frequent UPI transactions, and looking for convenience and peace of mind against punitive bank late fees. Having used CRED weekly for over two years, I mapped the subtle friction points where monetization pressure began compromising user clarity.</p><h2>3. Screen-by-Screen Breakdown</h2><ul><li><b>Home (The Monetization Map):</b> Unsecured loans (CRED Cash) occupy the top real-estate because lending generates the highest margin. Bill payments sit second to drive recurring engagement. The bottom of the feed features bank carousels and partner card offers.</li><li><b>More &amp; Search:</b> Serves as the master directory, but repeats items already prominently featured on the Home screen (such as Garage, Credit Score, and Gift Cards).</li><li><b>Rewards (Gamified Engagement):</b> Replaces sober financial cues with dynamic story circles, live payout tickers, and glowing drop countdowns—driving engagement through gamification.</li><li><b>Garage (Paperwork to Cross-Sell):</b> Converts utility paperwork (challans, pollution certificates) into high-intent motor insurance renewal funnels.</li></ul><h2>4. The 5 Core UX Friction Points</h2><ul><li><b>Day-One Cognitive Overload (High Severity):</b> New users face 30+ disparate entry points immediately upon signup, with no progressive onboarding.</li><li><b>Redundant Pathways / 6 Doors to One Feature (High Severity):</b> The credit score tool can be reached from 6 distinct entry points across 4 separate screens, inflating cognitive load.</li><li><b>Competing Nudges (Medium Severity):</b> Up to four different banners and alerts (reward pills, credit score alerts, update modals, restart notices) compete for attention in a single home screen scroll.</li><li><b>Buried Quick Access (Medium Severity):</b> The 'Quick Access' shortcut list sits at the very bottom of the page, requiring full scroll navigation.</li><li><b>Tonal Dissonance (Low Severity):</b> High-stakes lending tools coexist directly beside high-stimulation casino-style reward drops.</li></ul><h2>5. 3 High-Leverage Architecture Solutions</h2><ul><li><b>1. Progressive Disclosure (Start Small, Grow with Use):</b> Present first-time users with only core bills, UPI, and verified rewards. Introduce secondary verticals progressively as transaction tenure increases.</li><li><b>2. Single Canonical Entry Point:</b> Enforce a strict 1-door-per-feature architecture across Home and More, replacing repetitive chip grids with user-adaptive shortcuts.</li><li><b>3. Priority-Gated Notification Engine:</b> Cap visible nudges to exactly one high-priority alert per session (e.g. prioritize a bill due in 24h over an app update).</li></ul><div style=\"margin: 28px 0; padding: 18px 20px; border-radius: 12px; background: rgba(61, 220, 132, 0.08); border: 1px solid rgba(61, 220, 132, 0.3);\"><p style=\"margin: 0 0 10px; font-weight: 600; color: #2f7d4f;\">🔍 Explore the Interactive Screen Teardown</p><p style=\"margin: 0 0 12px; font-size: 0.9rem;\">Experience the annotated screen walkthrough with interactive pin callouts on Home, More, Rewards, and Garage.</p><a href=\"cred-teardown.html\" style=\"display: inline-block; padding: 8px 16px; border-radius: 6px; background: #17171b; color: #3ddc84; font-size: 0.85rem; font-weight: 600; text-decoration: none;\">Launch Interactive Screen Teardown →</a></div>"
   },
   {
     "id": "mona-lisa",
