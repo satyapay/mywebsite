@@ -949,6 +949,7 @@ const projects = [
   {
     "id": "cred",
     "slug": "cred",
+    "url": "cred-teardown.html",
     "title": "CRED — A Door for Everything",
     "cat": "Teardown",
     "meta": "Product Teardown · FinTech · Sep 2026",
@@ -1390,6 +1391,7 @@ function open(id){
   const p = projects.find(x => x.id === id);
   if (!p) return;
   lastFocus = document.activeElement;
+  const projectHref = p.url || `#/work/${p.slug}`;
   inner.innerHTML = `
     <button class="sheet__close" type="button" id="closeBtn">Close</button>
     <div class="sheet__art" style="aspect-ratio:${p.ar}; background-image:${artFill(p)}"></div>
@@ -1398,7 +1400,7 @@ function open(id){
       <p class="sheet__sub">${esc(p.sub)}</p>
       <p class="plaque"><span>Medium</span> &nbsp; ${esc(p.plaque)}</p>
       <div class="sheet__body">${p.excerpt.map(t => `<p>${esc(t)}</p>`).join('')}</div>
-      <a class="sheet__more" href="#/work/${p.slug}">View the full project &rarr;</a>
+      <a class="sheet__more" href="${projectHref}">Read full project &rarr;</a>
     </div>`;
   sheet.hidden = false;
   document.body.style.overflow = 'hidden';
@@ -1462,8 +1464,14 @@ function renderStudy(slug){
   if (p.stats && p.stats.length)
     stats = `<div class="stats">${p.stats.map(st => `<div><b>${esc2(st.value)}</b><span>${esc2(st.label)}</span></div>`).join('')}</div>`;
   let walk = '';
-  if (prev) walk += `<a href="#/work/${prev.slug}"><span>&larr; Previous on the wall</span><b>${esc2(prev.title)}</b></a>`;
-  if (next) walk += `<a class="next" href="#/work/${next.slug}"><span>Next on the wall &rarr;</span><b>${esc2(next.title)}</b></a>`;
+  if (prev) {
+    const prevHref = prev.url || `#/work/${prev.slug}`;
+    walk += `<a href="${prevHref}"><span>&larr; Previous on the wall</span><b>${esc2(prev.title)}</b></a>`;
+  }
+  if (next) {
+    const nextHref = next.url || `#/work/${next.slug}`;
+    walk += `<a class="next" href="${nextHref}"><span>Next on the wall &rarr;</span><b>${esc2(next.title)}</b></a>`;
+  }
 
   studyView.innerHTML = `
   <header class="sitebar">
@@ -1498,7 +1506,15 @@ function route(){
   if (h === 'work') view = 'work';
   else if (h === 'about') view = 'about';
   else if (h === 'thoughts') view = 'thoughts';
-  else if (h.startsWith('work/')) view = renderStudy(h.slice(5)) ? 'study' : 'work';
+  else if (h.startsWith('work/')) {
+    const slug = h.slice(5);
+    const p = projects.find(x => x.slug === slug);
+    if (p && p.url) {
+      location.replace(p.url);
+      return;
+    }
+    view = renderStudy(slug) ? 'study' : 'work';
+  }
 
   Object.values(views).forEach(v => v.classList.remove('is-active'));
   views[view].classList.add('is-active');
