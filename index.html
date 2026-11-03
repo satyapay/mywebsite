@@ -344,7 +344,8 @@
     border-radius: 2px;
   }
   .sheet__art {
-    flex: 0 0 300px;
+    flex: 0 0 360px;
+    background-position: center;
     border: 6px solid var(--frame);
     outline: 1px solid var(--frame-edge);
     outline-offset: -7px;
@@ -362,6 +363,7 @@
     margin: 0 0 6px;
   }
   .sheet__sub { font-size: 0.88rem; color: var(--muted); margin: 0 0 22px; }
+  .sheet__credit { font-size: 0.72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
 
   .plaque {
     border-top: 1px solid var(--hairline);
@@ -883,7 +885,9 @@ const projects = [
       "Eliminated mandatory RTO visits for 120M citizens by replacing a 6-month bureaucratic maze with a 3-day bilateral transfer room.",
       "Engineered WebRTC Remote Video KYC, 1-click Bank NOC via Account Aggregator, and Virtual Traffic Court with photographic radar evidence."
     ],
-    "ar": 1.45,
+    "img": "paintings/wanderer-above-the-sea-of-fog.jpg",
+    "credit": "Caspar David Friedrich · Wanderer above the Sea of Fog · c.1818",
+    "ar": 0.78,
     "scale": 1.15,
     "bg": "radial-gradient(circle at 80% 20%, #ff9933 0%, rgba(255,153,51,0.2) 25%, transparent 50%), radial-gradient(circle at 20% 80%, #138808 0%, rgba(19,136,8,0.2) 25%, transparent 50%), linear-gradient(145deg, #0b1e36 0%, #102a45 45%, #183b5c 100%)",
     "role": "Product Architect & Full-Stack Builder",
@@ -1100,7 +1104,7 @@ function esc(s){ const d=document.createElement('div'); d.textContent=s; return 
 
 /* a real screenshot if there is one, otherwise the placeholder gradient */
 function artFill(p){
-  return p.img ? `url("${encodeURI(p.img)}")` : p.bg;
+  return p.img ? `url('${encodeURI(p.img)}')` : p.bg;
 }
 
 /* ===============================================================
@@ -1405,6 +1409,7 @@ function open(id){
     <button class="sheet__close" type="button" id="closeBtn">Close</button>
     <div class="sheet__art" style="aspect-ratio:${p.ar}; background-image:${artFill(p)}"></div>
     <div class="sheet__text">
+      ${p.credit ? `<p class="sheet__credit">${esc(p.credit)}</p>` : ''}
       <h2 class="sheet__title" id="sheetTitle">${esc(p.title)}</h2>
       <p class="sheet__sub">${esc(p.sub)}</p>
       <p class="plaque"><span>Medium</span> &nbsp; ${esc(p.plaque)}</p>
