@@ -672,6 +672,13 @@
   .home2 .h2photo { position: relative; }
   .home2 .h2photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; filter: grayscale(1); opacity: 0; transition: opacity .28s ease-in-out; }
   .home2 .h2photo img.is-on { opacity: 1; }
+  /* light fade on all four edges so the photo melts into the page */
+  .home2 .h2photo {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%), linear-gradient(180deg, transparent 0, #000 16%, #000 84%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 86%, transparent 100%), linear-gradient(180deg, transparent 0, #000 16%, #000 84%, transparent 100%);
+    mask-composite: intersect;
+  }
   .home2 .h2tag { margin: 0; font-size: clamp(15px, 1.3vw, 22px); font-weight: 600; letter-spacing: -0.01em; animation: h2up 1s ease .4s both; }
   .home2 footer { display: grid; grid-template-columns: 1fr minmax(0, 2fr) 1fr; align-items: end; gap: 24px;
     padding: 0 clamp(14px, 1.2vw, 24px) 14px; font-size: clamp(14px, 1.05vw, 17px); font-weight: 600; line-height: 1.2;
@@ -736,7 +743,7 @@
     </nav>
   </header>
   <main>
-    <h1><span>Satya</span><a class="h2photo" href="#/about" title="About"><img src="satya-bw.png" alt="Satya Krithik" class="is-on"><img src="dark-knight.jpg" alt="The Dark Knight"><img src="virat-kohli.jpg" alt="Virat Kohli"><img src="12-angry-men.jpg" alt="12 Angry Men"><img src="ronaldo.jpg" alt="Cristiano Ronaldo"><img src="rcb.jpg" alt="Royal Challengers Bengaluru"><img src="satya%202%20bw.jpeg" alt="Satya Krithik"></a><span>Krithik</span></h1>
+    <h1><span>Satya</span><a class="h2photo" href="#/about" title="About"><img src="satya-bw.png" alt="Satya Krithik" class="is-on" style="object-position:50% 20%"><img src="dark-knight.jpg" alt="The Dark Knight"><img src="virat-kohli.jpg" alt="Virat Kohli"><img src="12-angry-men.jpg" alt="12 Angry Men" style="object-position:50% 82%"><img src="ronaldo.jpg" alt="Cristiano Ronaldo" style="object-position:50% 5%"><img src="rcb.jpg" alt="Royal Challengers Bengaluru"><img src="satya%202%20bw.jpeg" alt="Satya Krithik" style="object-position:50% 25%"></a><span>Krithik</span></h1>
     <p class="h2tag">Building what matters</p>
   </main>
   <footer>
@@ -1539,16 +1546,23 @@ document.body.addEventListener('click', e => {
 
 addEventListener('hashchange', route);
 
-/* home photo slideshow: add more <img> inside .h2photo to extend */
+/* home photo flicker: holds on the first photo (Satya), then flashes through
+   the rest quickly, then back. Add more <img> inside .h2photo to extend.
+   HOLD = how long the first photo stays; FLICK = time per photo in the burst. */
 (function(){
   const imgs = document.querySelectorAll('.h2photo img');
   if (imgs.length < 2) return;
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const HOLD = calm ? 2600 : 1400, FLICK = calm ? 1300 : 150;
+  if (!calm) imgs.forEach(im => { im.style.transition = 'none'; });
   let i = 0;
-  setInterval(() => {
+  function next() {
     imgs[i].classList.remove('is-on');
     i = (i + 1) % imgs.length;
     imgs[i].classList.add('is-on');
-  }, 1300);
+    setTimeout(next, i === 0 ? HOLD : FLICK);
+  }
+  setTimeout(next, HOLD);
 })();
 route();
 
